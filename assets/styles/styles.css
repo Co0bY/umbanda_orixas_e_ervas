@@ -1,0 +1,13 @@
+  /* Adicionando estilo para a navbar */
+  .navbar-custom {
+    background-image: url("../img/header_background.jpg");
+    background-size: cover;
+    background-position: center;
+    color: white; /* Cor do texto, para melhor legibilidade */
+    font-family: "Dancing Script", cursive; /* Aplicando a fonte */
+  }
+
+  /* Aplicando a fonte ao título do offcanvas */
+  .offcanvas-title {
+    font-family: "Dancing Script", cursive; /* Aplicando a fonte */
+  }

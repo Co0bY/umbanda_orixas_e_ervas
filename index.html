@@ -1,38 +1,536 @@
-<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-<link
-  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-  rel="stylesheet"
-  integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-  crossorigin="anonymous"
-/>
-<script
-  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-  crossorigin="anonymous"
-></script>
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css"
-/>
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Importando o CSS do arquivo externo -->
+    <link rel="stylesheet" href="assets/styles/styles.css" />
     <title>Umbanda - Banhos e Ervas</title>
   </head>
   <body>
     <div id="app">
-      <h1>Umbanda - Banhos e Ervas</h1>
-      <p>bem vindo {{ name}}</p>
+      <nav class="navbar navbar-custom bg-body-tertiary fixed-top" style="nackground: linear-gradient(to bottom, #001f3f, #000000);">
+        <div class="container-fluid">
+          <a class="navbar-brand text-light text-uppercase fw-bold" href="#"
+            >Umbanda - Banhos e Ervas</a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar"
+            aria-label="Toggle navigation"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 -960 960 960"
+              width="24px"
+              fill="#e8eaed"
+            >
+              <path
+                d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
+              />
+            </svg>
+          </button>
+          <div
+            class="offcanvas offcanvas-end bg-dark"
+            tabindex="-1"
+            id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel"
+          >
+            <div class="offcanvas-header text-light fw-bold text-center">
+              <h5
+                class="offcanvas-title text-center text-uppercase"
+                id="offcanvasNavbarLabel"
+              >
+                Umbanda - Banhos e Ervas
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+                style="color: white"
+              ></button>
+            </div>
+            <form class="d-flex mt-3 mx-3" role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-outline-success" type="submit">
+                Pesquisar
+              </button>
+            </form>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a
+                    class="nav-link active text-light"
+                    aria-current="page"
+                    href="#"
+                    >Pagina Inicial</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#"
+                    >Oxala</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#"
+                    >Ogum</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#"
+                    >Iamanja</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#"
+                    >Oxóssi</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#"
+                    >Oxum</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#"
+                    >Omolu</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#"
+                    >Xango</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#"
+                    >Iansã</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <br />
+      <br />
+      <br />
+      <!-- Conteúdo principal -->
+      <div class="row">
+        <div class="col">
+          <div class="card bg-dark text-light" style="height: 100%">
+            <div class="card-image">
+              <figure class="image is-3by4">
+                <img
+                  src="./assets/img/Oxala.jpg"
+                  alt="Ilustração de Oxalá proveniente de: https://br.pinterest.com/pin/12384967722222841/"
+                />
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="media">
+                <div class="media-left">
+                  <figure class="image is-48x48">
+                    <img
+                      src="./assets/img/Oxala.jpg"
+                      alt="Ilustração de Oxalá proveniente de: https://br.pinterest.com/pin/12384967722222841/"
+                    />
+                  </figure>
+                </div>
+                <div class="media-content">
+                  <p class="title is-4">Oxala</p>
+                  <p class="subtitle is-6">Sarava</p>
+                </div>
+              </div>
 
-      <div class="card">
-        <footer class="card-footer">
-          <a href="#" class="card-footer-item">Save</a>
-          <a href="#" class="card-footer-item">Edit</a>
-          <a href="#" class="card-footer-item">Delete</a>
-        </footer>
+              <div class="content">
+                Oxalá é um orixá, uma divindade, cultuada nas religiões
+                brasileiras de matriz africana, Candomblé e Umbanda. É o criador
+                do universo e também o orixá mais poderoso. Oxalá pode receber
+                outros nomes, como Orixalá e Obatalá. Ele foi o primeiro dos
+                orixás, o que recebeu a missão de criar o universo e também os
+                seres humanos. Por isso, é chamado de pai Oxalá. A palavra oxalá
+                também é utilizada como interjeição para expressar o desejo que
+                algo aconteça. É sinônimo de "tomara" ou "queira Deus".
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card bg-dark text-light" style="height: 100%">
+            <div class="card-image">
+              <figure class="image is-3by4">
+                <img
+                  src="./assets/img/Ogum Vermelho.jpg"
+                  alt="Ilustração de Oxalá proveniente de: https://br.pinterest.com/pin/12384967722222839/"
+                />
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="media">
+                <div class="media-left">
+                  <figure class="image is-48x48">
+                    <img
+                      src="./assets/img/Ogum Vermelho.jpg"
+                      alt="Ilustração de Oxalá proveniente de: https://br.pinterest.com/pin/12384967722222839/"
+                    />
+                  </figure>
+                </div>
+                <div class="media-content">
+                  <p class="title is-4">Ogum</p>
+                  <p class="subtitle is-6">Ogum Ye</p>
+                </div>
+              </div>
+
+              <div class="content">
+                Ogum é uma divindade de origem africana (orixá) cultuado em
+                religiões afro-brasileiras, como a umbanda e o candomblé. Ogum é
+                o orixá guerreiro, conhecido pela sua coragem e força. Aliás, em
+                iorubá, grupo étnico-linguístico da África Ocidental, Ogum
+                significa guerra. Ogum é senhor da metalurgia, tendo domínio
+                sobre o ferro e o aço e todas as ferramentas feitas com esses
+                materiais, como a lança, o martelo, a faca, a ferradura e a
+                enxada. É um orixá associado à luta e também ao trabalho,
+                patrono tanto dos militares quanto dos trabalhadores braçais
+                (sobretudo os ferreiros).
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card bg-dark text-light" style="height: 100%">
+            <div class="card-image">
+              <figure class="image is-3by4">
+                <img
+                  src="./assets/img/Yemanja.jpg"
+                  alt="Ilustração de Oxalá proveniente de: https://br.pinterest.com/pin/22236591905758384/"
+                />
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="media">
+                <div class="media-left">
+                  <figure class="image is-48x48">
+                    <img
+                      src="./assets/img/Yemanja.jpg"
+                      alt="Ilustração de Oxalá proveniente de: https://br.pinterest.com/pin/22236591905758384/"
+                    />
+                  </figure>
+                </div>
+                <div class="media-content">
+                  <p class="title is-4">Iemanjá</p>
+                  <p class="subtitle is-6">Odoceaba</p>
+                </div>
+              </div>
+
+              <div class="content">
+                Iemanjá é um orixá (divindade africana) feminino das religiões
+                Candomblé e Umbanda. O seu nome tem origem nos termos do idioma
+                Iorubá (língua nígero-congolesa) “Yèyé omo ejá”, que significam
+                “mãe cujos filhos são como peixes”. É considerada a mãe de todos
+                os adultos e a mãe dos orixás. Iemanjá, na verdade, é a
+                divindade do rio que deságua no mar. Ela é filha de Olokun, o
+                orixá rei dos oceanos. O rio que representa Iemanjá e sua
+                história é o Rio Ogun, localizado no estado de Oxum, na Nigéria.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-5">
+        <div class="col">
+          <div class="card bg-dark text-light" style="height: 100%">
+            <div class="card-image">
+              <figure class="image is-3by4">
+                <img
+                  src="./assets/img/Oxóssi.jpg"
+                  alt="Ilustração de Oxalá proveniente de: https://br.pinterest.com/pin/6403624464370931/"
+                />
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="media">
+                <div class="media-left">
+                  <figure class="image is-48x48">
+                    <img
+                      src="./assets/img/Oxóssi.jpg"
+                      alt="Ilustração de Oxalá proveniente de: https://br.pinterest.com/pin/6403624464370931/"
+                    />
+                  </figure>
+                </div>
+                <div class="media-content">
+                  <p class="title is-4">Oxóssi</p>
+                  <p class="subtitle is-6">Okye Cabloco/Aro</p>
+                </div>
+              </div>
+
+              <div class="content">
+                Oxóssi é uma divindade das religiões africanas, também conhecida
+                como orixá, que representa o conhecimento e as florestas.
+                Normalmente, esse orixá é representado pela figura de um homem
+                que tem em suas mãos um arco e flecha, considerado uma espécie
+                de guardião e caçador. Para as religiões afro-brasileiras, como
+                a Umbanda e o Candomblé, Oxóssi é ligado ao conhecimento e à
+                natureza. Ele sempre enaltece tudo o que a natureza pode
+                proporcionar, conforme a necessidade humana. Por esta razão,
+                também é conhecido como o orixá da caça, da fartura e do
+                sustento. Na África antiga, Oxóssi era considerado o guardião
+                dos caçadores, responsável por trazer o sustento para a tribo.
+                Hoje em dia, ele protege todos os que saem de casa diariamente
+                para o trabalho, pois é deste esforço que vem o sustento das
+                famílias.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card bg-dark text-light" style="height: 100%">
+            <div class="card-image">
+              <figure class="image is-3by4">
+                <img
+                  src="./assets/img/Oxum Azul.jpg"
+                  alt="Ilustração de Oxalá proveniente de: https://br.pinterest.com/pin/2814818510795242/"
+                />
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="media">
+                <div class="media-left">
+                  <figure class="image is-48x48">
+                    <img
+                      src="./assets/img/Oxum Azul.jpg"
+                      alt="Ilustração de Oxalá proveniente de: https://br.pinterest.com/pin/2814818510795242/"
+                    />
+                  </figure>
+                </div>
+                <div class="media-content">
+                  <p class="title is-4">Oxum</p>
+                  <p class="subtitle is-6">Aye Aye ô</p>
+                </div>
+              </div>
+
+              <div class="content">
+                Oxum é uma orixá, é a rainha da água doce, dona dos rios e
+                cachoeiras, cultuada no candomblé e também na umbanda, religiões
+                de origem africana. Oxum é a segunda esposa de Xangô e
+                representa a sabedoria e o poder feminino. Além disso, é vista
+                como deusa do ouro e do jogo de búzios. Oxum representa a deusa
+                da beleza, orixá do amor, da fertilidade e da maternidade,
+                responsável pela proteção dos fetos e das crianças
+                recém-nascidas, adorada pelas mulheres que querem engravidar.
+                Seu elemento é a água, sua cor é o amarelo e seu dia é o sábado.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card bg-dark text-light" style="height: 100%">
+            <div class="card-image">
+              <figure class="image is-3by4">
+                <img
+                  src="./assets/img/Omolu.jpg"
+                  alt="Ilustração de Oxalá proveniente de: https://br.pinterest.com/pin/4362930881767528/"
+                />
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="media">
+                <div class="media-left">
+                  <figure class="image is-48x48">
+                    <img
+                      src="./assets/img/Omolu.jpg"
+                      alt="Ilustração de Oxalá proveniente de: https://br.pinterest.com/pin/4362930881767528/"
+                    />
+                  </figure>
+                </div>
+                <div class="media-content">
+                  <p class="title is-4">Omolu</p>
+                  <p class="subtitle is-6">Atoto</p>
+                </div>
+              </div>
+
+              <div class="content">
+                Obaluaê é o deus iorubá e das religiões afro-brasileiras
+                associado à cura, às doenças, ao respeito aos mais velhos, à
+                terra e à morte. Também conhecido como Omolu, Obaluaiê, Omulu ou
+                Xapanã, ocupa um lugar de destaque nas práticas religiosas de
+                seus devotos. Sua proteção e intercessão é muito requisitada em
+                momentos de dificuldades físicas e espirituais. O Orixá é
+                saudado com a expressão de origem iorubá Atotô Obaluaê, que
+                significa “silêncio para o grande Rei da Terra”.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-5">
+        <div class="col">
+          <div class="card bg-dark text-light" style="height: 100%">
+            <div class="card-image">
+              <figure class="image is-3by4">
+                <img
+                  src="./assets/img/Nana.jpg"
+                  alt="Ilustração de Oxalá proveniente de: https://br.pinterest.com/pin/4362930881767528/"
+                />
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="media">
+                <div class="media-left">
+                  <figure class="image is-48x48">
+                    <img
+                      src="./assets/img/Nana.jpg"
+                      alt="Ilustração de Oxalá proveniente de: https://br.pinterest.com/pin/4362930881767528/"
+                    />
+                  </figure>
+                </div>
+                <div class="media-content">
+                  <p class="title is-4">Nanã Buruque</p>
+                  <p class="subtitle is-6">Salubananã</p>
+                </div>
+              </div>
+
+              <div class="content">
+                Nanã, também conhecida como Anamburucu, Borocô, Nanamburucu,
+                Nanan Buruku e Nanã Buruquê, é uma divindade das religiões
+                afro-brasileirase da mitologia iorubá. Considerada a iabá (orixá
+                feminino) mais antiga e sábia, é mãe de muitos orixás, como
+                Omolu, Irocô, Ossaim, Oxumaré e Euá. É a senhora dos pântanos,
+                da lama e das águas paradas. Também é a divindade guardiã do
+                portal entre o mundo dos vivos e dos mortos, recebendo as almas
+                dos desencarnados e as enviando para a reencarnação. A iabá é
+                geralmente representada como uma mulher idosa, de pele negra e
+                cabelos brancos, sempre acompanhada de seu cajado, o ibiri.
+                Nanã, uma das responsáveis pela criação da humanidade, é um
+                orixá temida e respeitada, de grande poder e sabedoria.
+                Protetora dos idosos, dos doentes e dos mortos, tem um lugar
+                simbólico que se assemelha ao ocupado pela lendária Grande-Mãe
+                em outras religiões.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card bg-dark text-light" style="height: 100%">
+            <div class="card-image">
+              <figure class="image is-3by4">
+                <img
+                  src="./assets/img/Iansá Amarela.jpg"
+                  alt="Placeholder image"
+                />
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="media">
+                <div class="media-left">
+                  <figure class="image is-48x48">
+                    <img
+                      src="./assets/img/Iansá Amarela.jpg"
+                      alt="Placeholder image"
+                    />
+                  </figure>
+                </div>
+                <div class="media-content">
+                  <p class="title is-4">Iansã</p>
+                  <p class="subtitle is-6">Eparrey</p>
+                </div>
+              </div>
+
+              <div class="content">
+                Iansã é uma divindade das religiões afro-brasileiras e da
+                mitologia iorubá associada aos ventos e às águas. Também
+                conhecida como Oiá ou Oyá, é uma das principais orixás
+                femininas. É amplamente adorada e celebrada em diversas
+                tradições religiosas do Brasil, África Ocidental e da América
+                Central. Sua importância transcende as fronteiras da religião,
+                estendendo-se à cultura e à identidade afro-brasileira.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card bg-dark text-light" style="height: 100%">
+            <div class="card-image">
+              <figure class="image is-3by4">
+                <img
+                  src="./assets/img/Xango.jpg"
+                  alt="Ilustração de Xango proveniente de: https://br.pinterest.com/pin/3025924742936426/"
+                />
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="media">
+                <div class="media-left">
+                  <figure class="image is-48x48">
+                    <img
+                      src="./assets/img/Xango.jpg"
+                      alt="Ilustração de Xango proveniente de: https://br.pinterest.com/pin/3025924742936426/"
+                    />
+                  </figure>
+                </div>
+                <div class="media-content">
+                  <p class="title is-4">Xango</p>
+                  <p class="subtitle is-6">Caoh Cabecile</p>
+                </div>
+              </div>
+
+              <div class="content">
+                Xangô é um orixá bastante cultuado pelas religiões
+                afro-brasileiras, considerado deus da justiça, dos raios, dos
+                trovões e do fogo, além de ser conhecido como protetor dos
+                intelectuais. Comparado com outras divindades, Xangô seria o
+                equivalente a Zeus, para os gregos,Tupã, para os Tupi-Guarani,
+                Júpiter, na mitologia romana, ou Odin, para os escandinavos.
+                Este orixá é considerado o mestre da sabedoria, gerando o poder
+                da política e justiça. Os crentes em sua existência recorrem a
+                ele para resolver problemas relacionados com documentos,
+                estudos, trabalhos intelectuais, entre outros. Etimologicamente,
+                Xangô é uma palavra de origem iorubá, onde o sufixo "Xa",
+                significa "senhor"; "angô" (AG + NO = "fogo oculto") e "Gô" pode
+                ser traduzido para "raio" ou "alma". Assim sendo, Xangô
+                significaria "senhor do fogo oculto".
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </body>
@@ -44,8 +542,17 @@
   createApp({
     data() {
       return {
-        name: "Hello Vue!",
+        isMenuOpen: false,
       };
+    },
+    methods: {
+      toggleMenu() {
+        this.isMenuOpen = !this.isMenuOpen;
+      },
     },
   }).mount("#app");
 </script>
+
+<style>
+  /* Você pode adicionar estilos adicionais aqui se necessário */
+</style>
